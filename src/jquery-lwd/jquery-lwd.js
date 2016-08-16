@@ -6,23 +6,12 @@ $.widget('custom.window', $.ui.dialog, {
 
     _create: function () {
         //console.log('_create');
-        console.log(this.options);
+        console.log(this);
         var objThis = this;
         this._super();
 
-        console.log('H: '+this.options.minHeight);
-        console.log('W: '+this.options.minWidth);
-
-        if(this.options.height === false || this.options.minHeight > this.options.height){
-            this.options.height = this.options.minHeight;
-            this.uiDialog.height(this.options.height);
-        }
-
-        if(this.options.width === false || this.options.minWidth > this.options.width){
-            this.options.width = this.options.minWidth;
-            this.uiDialog.width(this.options.width);
-        }
-
+        this.options.width = (!isNaN(this.options.width))? this.options.width: this.options.minWidth;
+        this.options.height = (!isNaN(this.options.height))? this.options.height: this.options.minHeight;
 
         /* START - set position and containment for draggable by appendTo-option */
         if(this.options.appendTo != '' && this.options.appendTo != 'body' && this.options.appendTo != 'window' && $(this.options.appendTo).length > 0){
@@ -584,10 +573,10 @@ $(document).ready(function () {
             maximizable: ($(this).attr('data-maximizable') == "true"),
             maximized: ($(this).attr('data-maximized') == "true"),
             maxWidth: $(this).attr('data-maxWidth'),
-            minHeight: (parseInt($(this).attr('data-minHeight')) > 200)? $(this).attr('data-minHeight'): 200,
+            minHeight: (parseInt($(this).attr('data-minHeight') != ''))? parseInt($(this).attr('data-minHeight')): 150,
             minimizable: ($(this).attr('data-minimizable') == "true"),
             minimized: ($(this).attr('data-minimized') == "true"),
-            minWidth: (parseInt($(this).attr('data-minWidth')) > 200)? $(this).attr('data-minWidth'): 200,
+            minWidth: (parseInt($(this).attr('data-minWidth') != ''))? parseInt($(this).attr('data-minWidth')): 150,
             modal: ($(this).attr('data-modal') == "true"),
             positionX : parseInt($(this).attr('data-positionX')),
             positionY : parseInt($(this).attr('data-positionY')),
