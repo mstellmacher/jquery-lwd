@@ -135,4 +135,15 @@ button.lwd-taskbar-button-focus:hover {
     background: #f6a828 url('../../../../lib/jquery-ui/themes/default/images/ui-bg_gloss-wave_35_f6a828_500x100.png') repeat-x scroll 50% 50%;
     color: #000000;
 }
+
+div#lwd-taskbar-clock {
+    float: right;
+    margin: 8px 10px 0 0;
+    padding: 5px 10px 5px 10px;
+    font-size: 0.8em;
+    border-top: #3d3e40 solid 1px !important;
+    border-left: #3d3e40 solid 1px !important;
+    border-bottom: #f8f7f6 solid 1px !important;
+    border-right: #f8f7f6 solid 1px !important;
+}
 /* END - Taskbar */

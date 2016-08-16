@@ -10,8 +10,8 @@ $.widget('custom.window', $.ui.dialog, {
         var objThis = this;
         this._super();
 
-        this.options.width = (!isNaN(this.options.width))? this.options.width: this.options.minWidth;
-        this.options.height = (!isNaN(this.options.height))? this.options.height: this.options.minHeight;
+        this.options.width = (!isNaN(this.options.width))? this.options.width: 150;
+        this.options.height = (!isNaN(this.options.height))? this.options.height: 150;
 
         /* START - set position and containment for draggable by appendTo-option */
         if(this.options.appendTo != '' && this.options.appendTo != 'body' && this.options.appendTo != 'window' && $(this.options.appendTo).length > 0){
@@ -550,7 +550,7 @@ $(document).ready(function () {
         }
 
         var options = {
-            clock: ($(this).attr('data-clock') != "false"),
+            clock: ($(this).attr('data-clock') == "true"),
             startbutton: $(this).attr('data-startbutton')
         };
 
