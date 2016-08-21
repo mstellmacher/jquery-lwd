@@ -99,6 +99,9 @@ span.ui-icon-closethick:active, button.ui-dialog-titlebar-close:active>span.ui-i
     background-position: -159px -15px;
 }
 
+img.lwd-window-icon {
+    float: left;
+}
 /* END - Overwrites */
 
 /* START - Focus */

@@ -31,12 +31,19 @@ button.ui-dialog-titlebar-close:focus {
 }
 
 .ui-dialog-title {
-    width: calc(100% - 60px) !important;
+    width: calc(100% - 81px) !important;
 }
 
 .ui-button-text:active, .ui-button-text:focus {
     outline: none !important;
     border: 0 !important;
+}
+
+img.lwd-window-icon {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 4px 5px 0 0;
 }
 /* END - Overwrites */
 
@@ -145,5 +152,11 @@ div#lwd-taskbar-clock {
     border-left: #3d3e40 solid 1px !important;
     border-bottom: #f8f7f6 solid 1px !important;
     border-right: #f8f7f6 solid 1px !important;
+}
+
+img.lwd-taskbar-icon {
+    width: 16px;
+    height: 16px;
+    margin: 1px 5px 0 0;
 }
 /* END - Taskbar */
