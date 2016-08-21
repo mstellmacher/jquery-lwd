@@ -240,6 +240,7 @@ div.taskbar-spacer {
 }
 
 img.lwd-taskbar-icon {
+    display: block;
     float: left;
     width: 16px;
     height: 16px;
