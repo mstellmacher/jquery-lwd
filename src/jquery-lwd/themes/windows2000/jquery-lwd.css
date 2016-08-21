@@ -82,9 +82,7 @@ button.ui-dialog-titlebar-close:active {
     width: calc(100% - 90px) !important;
     margin: 0 !important;
     height: 16px !important;
-    padding: 0 0 0 20px !important;
-    background: url('images/windows_icons.png') no-repeat !important;
-    background-position: -16px -16px !important;
+    padding: 0 0 0 0 !important;
 }
 
 .ui-state-default .ui-icon {
@@ -100,7 +98,10 @@ span.ui-icon-closethick:active, button.ui-dialog-titlebar-close:active>span.ui-i
 }
 
 img.lwd-window-icon {
+    width: 16px;
+    height: 16px;
     float: left;
+    margin: 0 3px 0 0;
 }
 /* END - Overwrites */
 
@@ -203,9 +204,7 @@ div#lwd-taskbar-button-container > button, div#taskbar>button {
     background-color: #d4d0c8;
     height: 26px;
     min-width: 70px;
-    padding: 1px 5px 2px 20px;
-    background: url('images/windows_icons.png') no-repeat !important;
-    background-position: -13px -13px !important;
+    padding: 1px 5px 2px 5px;
     margin: 2px 2px 0 2px !important;
     border-top: #f8f7f6 solid 2px;
     border-left: #f8f7f6 solid 2px;
@@ -216,9 +215,8 @@ div#lwd-taskbar-button-container > button, div#taskbar>button {
 
 div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-container > button.lwd-taskbar-button-focus, div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus {
     margin: 2px 2px 0 2px !important;
-    padding: 2px 5px 2px 20px !important;
+    padding: 2px 5px 2px 5px !important;
     background-color: #e9e7e5 !important;
-    background-position: -12px -12px !important;
     border-top: #3d3e40 solid 2px !important;
     border-left: #3d3e40 solid 2px !important;
     border-bottom: #f8f7f6 solid 2px !important;
@@ -239,5 +237,12 @@ div.taskbar-spacer {
     padding: 0;
     border-left: #7c7870 2px solid;
     border-right: #e9e7e5 2px solid;
+}
+
+img.lwd-taskbar-icon {
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin: 1px 3px 0 0;
 }
 /* END - Taskbar */
