@@ -6,7 +6,7 @@
     <title>Test</title>
 
     <link href="../lib/jquery-ui/themes/default/jquery-ui.css" rel="stylesheet" type="text/css" />
-    <link href="../src/jquery-lwd/themes/default/jquery-lwd.css" rel="stylesheet" type="text/css" />
+    <link href="../src/jquery-lwd/themes/windows2000/jquery-lwd.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript" src="../lib/jquery-ui/jquery.min.js"></script>
     <script type="text/javascript" src="../lib/jquery-ui/jquery-ui.min.js"></script>
@@ -16,13 +16,38 @@
 <body>
 
 <!-- START demo -->
-<div id="taskbar"></div>
+<div id="taskbar" data-clock="true"></div>
 
 <div class="window"
-     data-title="Window with Icon"
-     data-icon="images/default.png"
+     data-title="Window 1"
+     data-width="300"
+     data-height="300"
+     data-minimizable="true"
 >
-    This is a simple window with an icon in the titlebar.
+    Window 1
+</div>
+
+<div class="window"
+     data-title="Window 2"
+     data-icon="images/default.png"
+     data-width="400"
+     data-height="200"
+     data-positionY="300"
+     data-positionX="100"
+     data-maximizable="true"
+     data-minimizable="true"
+>
+    Window 2
+</div>
+
+<div class="window"
+     data-icon="images/default.png"
+     data-title="Window 3"
+     data-width="200"
+     data-height="500"
+     data-maximizable="true"
+>
+    Window 3
 </div>
 <!-- END demo -->
 

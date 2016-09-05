@@ -51,7 +51,7 @@ $.widget('custom.window', $.ui.dialog, {
         /* END set position and containment for draggable by appendTo-option */
 
         /* START - Add Buttons to titlebar */
-        $objWindowButtonBar = $('<div class="lwd-window-buttonbar"></div>');
+        var $objWindowButtonBar = $('<div class="lwd-window-buttonbar"></div>');
 
         // Relocate or remove close-button
         if(this.options.closable === true){
@@ -77,13 +77,23 @@ $.widget('custom.window', $.ui.dialog, {
         this.uiDialogTitlebar.append($objWindowButtonBar);
         /* END - Add Buttons to titlebar */
 
+        /* START - Add Icon to titlebar and tasklbar */
+        if(this.options.icon != '' && this.options.icon !== undefined){
+            this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
+        }
+        /* END - Add Icon to titlebar and tasklbar */
 
         /* START - Add button to taskbar */
         var $objTaskbar = $('div#taskbar');
         var $objTaskbarButtonContaier = $('div#lwd-taskbar-button-container');
 
         if($objTaskbar.is(':visible')){
-            var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'">'+this.options.title+'</button>');
+            if(this.options.icon != '' && this.options.icon !== undefined){
+                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><img src="'+this.options.icon+'" class="lwd-taskbar-icon" />'+this.options.title+'</button>');
+            }else{
+                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'">'+this.options.title+'</button>');
+            }
+
             $objTaskbarButtonContaier.append($objTaskbarButton);
         }
         /* END - Add button to taskbar */
@@ -569,6 +579,7 @@ $(document).ready(function () {
             draggable: ($(this).attr('data-draggable') != "false"),
             height: parseInt($(this).attr('data-height')),
             hide: ($(this).attr('data-hide') == "true"),
+            icon: ($(this).attr('data-icon')),
             maxHeight: $(this).attr('data-maxHeight'),
             maximizable: ($(this).attr('data-maximizable') == "true"),
             maximized: ($(this).attr('data-maximized') == "true"),
