@@ -79,7 +79,7 @@ $.widget('custom.window', $.ui.dialog, {
 
         /* START - Add Icon to titlebar and tasklbar */
         if(this.options.icon != '' && this.options.icon !== undefined){
-            //this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
+            this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
         }
         /* END - Add Icon to titlebar and tasklbar */
 
