@@ -19,7 +19,23 @@ html, body {
 * {
     outline: 0 !important;
     outline: none !important;
+    margin: 0;
+    padding: 0;
 }
+
+input::-moz-focus-inner /*Remove button padding in FF*/
+{
+    border: 0 !important;
+    padding: 0 !important;
+}
+
+button::-moz-focus-inner /*Remove button padding in FF*/
+{
+    border: 0 !important;
+    padding: 0 !important;
+    padding-top: -2px !important;
+}
+
 .ui-widget {
     font-family: Tahoma;
 }
@@ -199,11 +215,11 @@ div#lwd-taskbar-clock {
 }
 
 div#lwd-taskbar-button-container > button, div#taskbar>button {
+    display: block;
     float: left;
     cursor: pointer;
     background-color: #d4d0c8;
     height: 26px;
-    line-height: 16px;
     min-width: 70px;
     padding: 1px 5px 2px 5px;
     margin: 2px 2px 0 2px !important;
@@ -225,10 +241,24 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
     outline: none;
 }
 
+span.lwd-taskbar-button-title {
+    float: left;
+    padding: 2px 0 0 0;
+}
+
+@-moz-document url-prefix() {
+    span.lwd-taskbar-button-title {
+        float: left;
+        padding: 0;
+    }
+}
+
 button#startbutton {
     float: left;
     margin: 2px 2px 0 2px;
 }
+
+
 
 div.taskbar-spacer {
     float: left;

@@ -79,7 +79,7 @@ $.widget('custom.window', $.ui.dialog, {
 
         /* START - Add Icon to titlebar and tasklbar */
         if(this.options.icon != '' && this.options.icon !== undefined){
-            this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
+            //this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
         }
         /* END - Add Icon to titlebar and tasklbar */
 
@@ -89,9 +89,9 @@ $.widget('custom.window', $.ui.dialog, {
 
         if($objTaskbar.is(':visible')){
             if(this.options.icon != '' && this.options.icon !== undefined){
-                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><img src="'+this.options.icon+'" class="lwd-taskbar-icon" />'+this.options.title+'</button>');
+                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><img src="'+this.options.icon+'" class="lwd-taskbar-icon" /><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
             }else{
-                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'">'+this.options.title+'</button>');
+                var $objTaskbarButton = $('<button class="lwd-taskbar-button" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
             }
 
             $objTaskbarButtonContaier.append($objTaskbarButton);
