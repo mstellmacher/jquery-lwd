@@ -203,7 +203,7 @@ div#lwd-taskbar-button-container > button, div#taskbar>button {
     cursor: pointer;
     background-color: #d4d0c8;
     height: 26px;
-    line-height: 26px;
+    line-height: 16px;
     min-width: 70px;
     padding: 1px 5px 2px 5px;
     margin: 2px 2px 0 2px !important;
