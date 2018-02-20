@@ -1,14 +1,150 @@
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.
+# jquery-lwd
+A lightweight desktop-engine for JQuery
 
-### Designer Templates
-We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.
+# Description
+This lightweight jquery-ui-plugin provides basic desktop functionality.
 
-### Creating pages manually
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
+# Features
+<ul>
+    <li>
+        Windows
+        <ul>
+            <li>Resizable</li>
+            <li>Movable</li>
+            <li>Focus on active window</li>
+            <li>Minimizable</li>
+            <li>Maximizable</li>
+            <li>Titlebar-icons</li>
+        </ul>
+    </li>
+    <li>
+        Taskbar
+        <ul>
+            <li>Display buttons for open windows</li>
+            <li>Focus and restore windows on click</li>
+            <li>Clock</li>
+        </ul>
+    </li>
+</ul>
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
+#Usage
+Insert before </head>-Tag:
+```html
+<link href="/path/to/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="/path/to/jquery-lwd/themes/default/jquery-lwd.css" rel="stylesheet" type="text/css" />
 
-### Support or Contact
-Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<script type="text/javascript" src="/path/to/jquery-ui/jquery.min.js"></script>
+<script type="text/javascript" src="/path/to/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/path/to/jquery-lwd/jquery-lwd.js"></script>
+```
+
+#API
+Basic window
+```html
+<div class="window">
+    My Content
+</div>
+```
+Title
+```html
+<div class="window" 
+     data-title="My Title"
+>
+    My Content
+</div>
+```
+Size
+```html
+<div class="window" 
+     data-minWidth="200" 
+     data-minHeight="100" 
+     data-width="400" 
+     data-height="200" 
+     data-maxWidth="800" 
+     data-maxHeight="400"
+>
+     My Content
+</div>
+```
+Position
+```html
+<div class="window" 
+     data-positionX="20"
+     data-positionY="40"
+>
+    My Content
+</div>
+```
+Resizable / Draggable
+```html
+<div class="window" 
+     data-resizable="true"
+     data-draggable="true"
+>
+    My Content
+</div>
+```
+Appendation
+```html
+<div id="container"></div>
+
+<div class="window" 
+     data-appendTo="#container"
+>
+    My Content
+</div>
+```
+Minimize / Maximizable
+```html
+<div class="window" 
+     data-minimizable="true"
+     data-minimized="false"
+     data-maximizable="true"
+     data-maximized="false"
+>
+    My Content
+</div>
+```
+Icon
+```html
+<div class="window" 
+     data-icon="/path/to/icon.png"
+>
+    My Content
+</div>
+```
+Basic Taskbar
+```html
+<div id="taskbar"></div>
+```
+Taskbar-Clock
+```html
+<div id="taskbar"
+     data-clock="true"
+>
+</div>
+```
+
+# Demos
+<ul>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_1-basic.html">Basic Window</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_2-appendTo.html">Window appended to div</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_3-size.html">Defined size</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_4-title.html">Window title</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_5-resize.html">Resize</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_6-minSize.html">Minimal window size</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_7-maxSize.html">Maximal window size</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_8-position.html">Position</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_9-closeFocus.html">Window Focus</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_10-minimize-withoutTaskbar.html">Minimize without taskbar</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_11-minimizeWithTaskbar.html">Minimize with taskbar</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_12-minimizeFocus.html">Focus when minimize</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_13-minimizeInitialized.html">Window initialized minimized</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_14-maximize.html">Maximize</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/1-windows_15-icon.html">Window Icon</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/2-taskbar_1-basic.html">Basic taskbar</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/2-taskbar_2-focus.html">Taskbar focus</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/2-taskbar_3-restore.html">Taskbar window restore</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/2-taskbar_4-clock.html">Taskbar clock</a></li>
+    <li><a href="http://www.markus-stellmacher.com/jquery-lwd/demo/v1.0/demo/3-themes_1-windows2000.html">Windows 2000 Theme</a></li>
+</ul>
