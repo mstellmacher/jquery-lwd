@@ -1,1 +1,2 @@
 lib/* linguist-vendored
+*.js linguist-language=Javascript
