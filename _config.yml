@@ -1,8 +1,0 @@
-title: Jquery-lwd
-description: A lightweight desktop-engine for jQuery
-google_analytics: 
-show_downloads: true
-theme: jekyll-theme-cayman
-
-gems:
-  - jekyll-mentions
