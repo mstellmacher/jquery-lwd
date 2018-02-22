@@ -1,0 +1,3 @@
+lib/* linguist-vendored=true
+demo/* linguist-vendored=true
+src/* linguist-vendored=false
