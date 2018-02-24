@@ -600,7 +600,7 @@ $(document).ready(function () {
     });
 
     $('div.window').each(function () {
-        $(this).window(options);
+        $(this).window();
     });
 
     $('.lwd-taskbar-button').on('click', function () {
