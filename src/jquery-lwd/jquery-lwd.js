@@ -8,6 +8,35 @@ $.widget('custom.window', $.ui.dialog, {
         //console.log('_create');
         //console.log(this);
         var objThis = this;
+
+        this.options = {
+            appendTo: $(this).attr('data-appendTo'),
+            autoOpen: ($(this).attr('data-autoOpen') != "false"),
+            closable: ($(this).attr('data-closable') != "false"),
+            closeOnEscape: ($(this).attr('data-closeOnEscape') != "false"),
+            closeText: $(this).attr('data-closeText'),
+            dialogClass: $(this).attr('data-dialogClass'),
+            draggable: ($(this).attr('data-draggable') != "false"),
+            height: parseInt($(this).attr('data-height')),
+            hide: ($(this).attr('data-hide') == "true"),
+            icon: ($(this).attr('data-icon')),
+            maxHeight: $(this).attr('data-maxHeight'),
+            maximizable: ($(this).attr('data-maximizable') == "true"),
+            maximized: ($(this).attr('data-maximized') == "true"),
+            maxWidth: $(this).attr('data-maxWidth'),
+            minHeight: (parseInt($(this).attr('data-minHeight') != ''))? parseInt($(this).attr('data-minHeight')): 150,
+            minimizable: ($(this).attr('data-minimizable') == "true"),
+            minimized: ($(this).attr('data-minimized') == "true"),
+            minWidth: (parseInt($(this).attr('data-minWidth') != ''))? parseInt($(this).attr('data-minWidth')): 150,
+            modal: ($(this).attr('data-modal') == "true"),
+            positionX : parseInt($(this).attr('data-positionX')),
+            positionY : parseInt($(this).attr('data-positionY')),
+            resizable: ($(this).attr('data-resizable') != "false"),
+            show: ($(this).attr('data-show') != "false"),
+            width: parseInt($(this).attr('data-width')),
+            title: $(this).attr('data-title')
+        };
+
         this._super();
 
         this.options.width = (!isNaN(this.options.width))? this.options.width: 150;
@@ -41,11 +70,42 @@ $.widget('custom.window', $.ui.dialog, {
                     of: window
                 };
             }else{
-                this.options.position = {
-                    my: 'center',
-                    at: 'center',
-                    of: window
-                };
+                var $objUiDialog = $('.ui-dialog');
+                var intDialogCount = parseInt($objUiDialog.size());
+                var $objSecondLastDialog = $objUiDialog.last().prev();
+
+                if(intDialogCount > 1 && $objSecondLastDialog.is(':visible')){
+                    var $objTitlebar = $objSecondLastDialog.find('.ui-dialog-titlebar');
+                    var intHeight = parseInt($objTitlebar.css('height')) + parseInt($objTitlebar.css('padding-top')) + parseInt($objTitlebar.css('padding-bottom'));
+                    var intPosX = parseInt($objSecondLastDialog.position().left)+intHeight;
+                    var intPosY = parseInt($objSecondLastDialog.position().top)+intHeight;
+                    var intHeight1 = this.options.height;
+                    var intHeight2 = $objSecondLastDialog.height()+parseInt($objSecondLastDialog.css('padding-top'))+parseInt($objSecondLastDialog.css('padding-bottom'));
+                    var intHeightDiff = intHeight1 - intHeight2;
+                    var intWidth1 = this.options.width;
+                    var intWidth2 = $objSecondLastDialog.width()+parseInt($objSecondLastDialog.css('padding-left'))+parseInt($objSecondLastDialog.css('padding-right'));
+                    var intWidthDiff = intWidth1 - intWidth2;
+
+                    if(intHeightDiff < 10 && intHeightDiff > -10 && intWidthDiff < 10 && intWidthDiff > -10){
+                        this.options.position = {
+                            my: 'left+'+intPosX+' top+'+intPosY+'',
+                            at: 'left top',
+                            of: window
+                        };
+                    }else{
+                        this.options.position = {
+                            my: 'center',
+                            at: 'center',
+                            of: window
+                        };
+                    }
+                }else{
+                    this.options.position = {
+                        my: 'center',
+                        at: 'center',
+                        of: window
+                    };
+                }
             }
         }
         /* END set position and containment for draggable by appendTo-option */
@@ -398,8 +458,8 @@ $.widget('custom.window', $.ui.dialog, {
         $objUiDialog.each(function () {
             if(parseInt($(this).css('z-index')) === intMaxUsedZIndex ){
                 var strAriaDescribedBy = $(this).attr('aria-describedby');
-                var objWindowToFocusOn = $('#'+strAriaDescribedBy).window('instance');
-                objWindowToFocusOn._focus();
+                var $objWindowToFocusOn = $('#'+strAriaDescribedBy).window('instance');
+                $objWindowToFocusOn._focus();
             }
         });
     },
@@ -569,34 +629,6 @@ $(document).ready(function () {
     });
 
     $('div.window').each(function () {
-        var options = {
-            appendTo: $(this).attr('data-appendTo'),
-            autoOpen: ($(this).attr('data-autoOpen') != "false"),
-            closable: ($(this).attr('data-closable') != "false"),
-            closeOnEscape: ($(this).attr('data-closeOnEscape') != "false"),
-            closeText: $(this).attr('data-closeText'),
-            dialogClass: $(this).attr('data-dialogClass'),
-            draggable: ($(this).attr('data-draggable') != "false"),
-            height: parseInt($(this).attr('data-height')),
-            hide: ($(this).attr('data-hide') == "true"),
-            icon: ($(this).attr('data-icon')),
-            maxHeight: $(this).attr('data-maxHeight'),
-            maximizable: ($(this).attr('data-maximizable') == "true"),
-            maximized: ($(this).attr('data-maximized') == "true"),
-            maxWidth: $(this).attr('data-maxWidth'),
-            minHeight: (parseInt($(this).attr('data-minHeight') != ''))? parseInt($(this).attr('data-minHeight')): 150,
-            minimizable: ($(this).attr('data-minimizable') == "true"),
-            minimized: ($(this).attr('data-minimized') == "true"),
-            minWidth: (parseInt($(this).attr('data-minWidth') != ''))? parseInt($(this).attr('data-minWidth')): 150,
-            modal: ($(this).attr('data-modal') == "true"),
-            positionX : parseInt($(this).attr('data-positionX')),
-            positionY : parseInt($(this).attr('data-positionY')),
-            resizable: ($(this).attr('data-resizable') != "false"),
-            show: ($(this).attr('data-show') != "false"),
-            width: parseInt($(this).attr('data-width')),
-            title: $(this).attr('data-title')
-        };
-
         $(this).window(options);
     });
 
