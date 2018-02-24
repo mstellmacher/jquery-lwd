@@ -27,8 +27,8 @@ This lightweight jquery-ui-plugin provides basic desktop functionality.
     </li>
 </ul>
 
-#Usage
-Insert before </head>-Tag:
+# Install
+Insert before &lt;/head&gt;-Tag:
 ```html
 <link href="/path/to/jquery-ui.css" rel="stylesheet" type="text/css" />
 <link href="/path/to/jquery-lwd/themes/default/jquery-lwd.css" rel="stylesheet" type="text/css" />
@@ -38,7 +38,7 @@ Insert before </head>-Tag:
 <script type="text/javascript" src="/path/to/jquery-lwd/jquery-lwd.js"></script>
 ```
 
-#API
+# Usage
 Basic window
 ```html
 <div class="window">
