@@ -5,8 +5,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _create: function () {
-        //console.log('_create');
-        //console.log(this);
         var objThis = this;
 
         this.options = {
@@ -255,18 +253,13 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _focus: function () {
-        //console.log('_focus');
-        //console.log(this.uiDialog);
         var $objTaskbar = $('div#taskbar');
 
         if(this.uiDialog.is(':visible')){
             this.options.positionX = this.uiDialog.position().left;
             this.options.positionY = this.uiDialog.position().top;
 
-            //console.log('-- window is visible >');
-
             if(this.options.minimized === true && $objTaskbar.is(':visible')){
-                //console.log('-- window is minimized |');
                 this.uiDialog.hide();
                 this._focusNextOpenWindow();
             }else{
@@ -291,14 +284,10 @@ $.widget('custom.window', $.ui.dialog, {
                 }
             }
 
-        }else{
-            //console.log('-- window is hidden |');
         }
     },
 
     _close: function () {
-        //console.log('_close');
-        //console.log(this.uiDialog);
         var $objTaskbar = $('div#taskbar');
 
         if($objTaskbar.is(':visible')){
@@ -309,9 +298,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _maximize: function () {
-        console.log('_maximize');
-        console.log(this.options.height);
-
         if(this.options.maximizable === true){
             this.uiDialogTitlebar.find('button.lwd-window-titlebar-maximize>span.ui-icon-maximizethick').removeClass('ui-icon-maximizethick').addClass('ui-icon-restorethick');
             this.uiDialogTitlebar.find('button.lwd-window-titlebar-minimize>span.ui-icon-restorethick').removeClass('ui-icon-restorethick').addClass('ui-icon-minimizethick');
@@ -373,8 +359,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _minimize: function () {
-        //console.log('_minimize');
-        //console.log(this.uiDialog);
         this.options.restoreHeightMinimized = this.uiDialog.height();
 
         if(!$('div#taskbar').is(':visible')){
@@ -395,9 +379,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _restore: function () {
-        //console.log('_restore');
-        //console.log(this.options);
-
         if(this.options.minimized === true){
             this.uiDialogTitlebar.find('button.lwd-window-titlebar-minimize>span.ui-icon-restorethick').removeClass('ui-icon-restorethick').addClass('ui-icon-minimizethick');
 
@@ -442,9 +423,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _focusNextOpenWindow: function () {
-        //console.log('_focusNextOpenWindow');
-        //console.log(this.uiDialog);
-
         var $objUiDialog = $('.ui-dialog');
         var intMaxUsedZIndex = 1;
 
@@ -517,9 +495,6 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _resize: function () {
-        //console.log('_resize');
-        //console.log(this);
-
         if(this.options.appendTo != '' && this.options.appendTo != 'body' && this.options.appendTo != 'window' && $(this.options.appendTo).length > 0) {
             var intLeft = Math.round(parseFloat(this.uiDialog.position().left));
             var intTop = Math.round(parseFloat(this.uiDialog.position().top));
@@ -553,11 +528,7 @@ $.widget('custom.window', $.ui.dialog, {
     },
 
     _adjustWindow : function () {
-        //console.log('_adjust');
-        //console.log(this);
-
         if(this.options.appendTo != '' && this.options.appendTo != 'body' && this.options.appendTo != 'window' && $(this.options.appendTo).length > 0){
-            console.log('fukme');
             var intDialogRight = Math.round(parseFloat(this.uiDialog.position().left)) + Math.round(parseFloat(this.uiDialog.width())) + Math.round(parseFloat(this.uiDialog.css('border-left-width')))+ Math.round(parseFloat(this.uiDialog.css('border-right-width')));;
             var intDialogBottom = Math.round(parseFloat(this.uiDialog.position().top)) + Math.round(parseFloat(this.uiDialog.height())) + Math.round(parseFloat(this.uiDialog.css('border-top-width')))+ Math.round(parseFloat(this.uiDialog.css('border-bottom-width')));
             var intParentRight = Math.round(parseFloat($(this.options.appendTo).position().left)) + Math.round(parseFloat($(this.options.appendTo).width()));
