@@ -45,9 +45,9 @@ body, html {
 
 .lwd-taskbar-button {
     height: 36px;
-    padding: 2px 16px 2px 16px;
     min-width: 120px;
     text-align: left;
+    vertical-align: middle;
     cursor: pointer;
     margin: 2px 5px 2px 0;
 }
