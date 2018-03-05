@@ -51,9 +51,9 @@ $(document).ready(function () {
 
             if($objTaskbar.is(':visible')){
                 if(this.options.icon !== '' && this.options.icon !== undefined){
-                    $objTaskbarButton = $('<button type="button" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><img src="'+this.options.icon+'" class="lwd-taskbar-icon" /><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
+                    $objTaskbarButton = $('<button type="button" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all lwd-taskbar-windowbutton" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><img src="'+this.options.icon+'" class="lwd-taskbar-icon" /><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
                 }else{
-                    $objTaskbarButton = $('<button type="button" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
+                    $objTaskbarButton = $('<button type="button" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all lwd-taskbar-windowbutton" data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"><span class="lwd-taskbar-button-title">'+this.options.title+'</span></button>');
                 }
 
                 $objTaskbarButtonContaier.append($objTaskbarButton);
@@ -418,7 +418,7 @@ $(document).ready(function () {
             $objTaskbar.addClass('ui-widget-header') && $objTaskbar.addClass('ui-corner-all');
             $objTaskbar.append($('<div id="lwd-taskbar-button-container"></div>'));
 
-            $objTaskbar.on('click','button.lwd-taskbar-button', function(){
+            $objTaskbar.on('click','button.lwd-taskbar-windowbutton', function(){
                 //console.log('click');
 
                 var strAriaDescribedBy = $(this).attr('data-ariadescribedby');
