@@ -1,0 +1,58 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.lwd-window-buttonbar {
+    position: absolute;
+    right: 0;
+}
+
+.lwd-window-titlebar-button {
+    display: inline-block;
+    right: .3em;
+    top: 50%;
+    width: 20px;
+    margin: -2px 0 0 2px;
+    padding: 1px;
+    height: 20px;
+}
+
+.ui-icon-maximizethick{
+    background-position: -32px -80px;
+}
+
+.ui-icon-minimizethick{
+    background-position: -48px -128px;
+}
+
+.ui-icon-restorethick{
+    background-position: -48px -80px;
+}
+
+#taskbar {
+    min-height: 42px;
+    border-radius: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 2px;
+    z-index: 99999;
+}
+
+.lwd-taskbar-button {
+    height: 36px;
+    padding: 2px 16px 2px 16px;
+    min-width: 120px;
+    text-align: left;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#lwd-taskbar-button-container {
+    display: inline-block;
+}
