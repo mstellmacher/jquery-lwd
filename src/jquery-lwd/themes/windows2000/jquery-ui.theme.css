@@ -1,0 +1,121 @@
+html, body {
+    background: #3a6ea5;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+* {
+    outline: 0 !important;
+    outline: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+input::-moz-focus-inner /*Remove button padding in FF*/
+{
+    border: 0 !important;
+    padding: 0 !important;
+}
+
+button::-moz-focus-inner /*Remove button padding in FF*/
+{
+    border: 0 !important;
+    padding: 0 !important;
+    padding-top: -2px !important;
+}
+
+.ui-dialog {
+    padding: 1px;
+    color: #000000;
+    background: #d4d0c8;
+    border-top: #eae6dc solid 2px;
+    border-left: #fffff9 solid 2px;
+    border-bottom: #504b46 solid 2px;
+    border-right: #504b46 solid 2px;
+}
+
+.ui-dialog-title {
+    height: 14px;
+    line-height: 14px;
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0 0 0 2px;
+}
+
+.ui-dialog-titlebar {
+    color: #dedede;
+    padding: 2px !important;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    background: #818084; /* Old browsers */
+    background: -moz-linear-gradient(left, #818084 0%, #c6c5c3 100%, #c6c5c3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#818084), color-stop(100%,#c6c5c3), color-stop(100%,#c6c5c3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #818084 0%,#c6c5c3 100%,#c6c5c3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #818084 0%,#c6c5c3 100%,#c6c5c3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #818084 0%,#c6c5c3 100%,#c6c5c3 100%); /* IE10+ */
+    background: linear-gradient(to right, #818084 0%,#c6c5c3 100%,#c6c5c3 100%); /* W3C */
+}
+
+div.lwd-window-focus .ui-dialog-titlebar {
+    background: #0b256b; /* Old browsers */
+    background: -moz-linear-gradient(left, #0b256b 0%, #a3c8ef 100%, #7db9e8 100%) !important; /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0b256b), color-stop(100%,#a3c8ef), color-stop(100%,#7db9e8)) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #0b256b 0%,#a3c8ef 100%,#7db9e8 100%) !important; /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #0b256b 0%,#a3c8ef 100%,#7db9e8 100%) !important; /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #0b256b 0%,#a3c8ef 100%,#7db9e8 100%) !important; /* IE10+ */
+    background: linear-gradient(to right, #0b256b 0%,#a3c8ef 100%,#7db9e8 100%) !important; /* W3C */
+}
+
+div#taskbar {
+    background: #d4d0c8;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    border-top: #fffff9 solid 2px;
+    z-index: 99999;
+}
+
+div#lwd-taskbar-button-container > button, div#taskbar>button {
+    display: block;
+    float: left;
+    cursor: pointer;
+    background-color: #d4d0c8;
+    height: 26px;
+    min-width: 70px;
+    padding: 1px 5px 2px 5px;
+    margin: 2px 2px 0 2px !important;
+    border-top: #f8f7f6 solid 2px;
+    border-left: #f8f7f6 solid 2px;
+    border-bottom: #3d3e40 solid 2px;
+    border-right: #3d3e40 solid 2px;
+    font-weight: normal !important;
+}
+
+div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-container > button.lwd-taskbar-button-focus, div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus, div#lwd-taskbar-button-container > button.ui-state-hover  {
+    margin: 2px 2px 0 2px !important;
+    padding: 2px 5px 2px 5px !important;
+    background-color: #e9e7e5 !important;
+    border-top: #3d3e40 solid 2px !important;
+    border-left: #3d3e40 solid 2px !important;
+    border-bottom: #f8f7f6 solid 2px !important;
+    border-right: #f8f7f6 solid 2px !important;
+    outline: none;
+}
+
+.lwd-window-titlebar-button {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 14px !important;
+    width: 16px !important;
+}
