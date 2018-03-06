@@ -149,7 +149,7 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-taskbar-button-title {
-    margin: 2px 0 0 3px;
+    margin: 2px 0 0 3px !important;
     font-weight: bold;
     font-size: 12px !important;
     line-height: 19px;
