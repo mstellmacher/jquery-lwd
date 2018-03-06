@@ -21,6 +21,20 @@ body, html {
     height: 20px;
 }
 
+.ui-dialog-titlebar {
+    vertical-align: middle;
+}
+
+.ui-dialog-title {
+    float: left;
+    padding-left: 5px;
+}
+
+.lwd-window-icon {
+    margin-top: 6px;
+    float: left;
+}
+
 .ui-icon-maximizethick{
     background-position: -32px -80px;
 }
@@ -54,4 +68,13 @@ body, html {
 
 #lwd-taskbar-button-container {
     display: inline-block;
+}
+
+.lwd-taskbar-icon {
+    float: left !important;
+}
+
+.lwd-taskbar-button-title {
+    float: left;
+    margin-left: 5px;
 }

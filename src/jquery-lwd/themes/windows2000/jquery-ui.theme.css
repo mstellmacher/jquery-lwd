@@ -77,12 +77,12 @@ button::-moz-focus-inner /*Remove button padding in FF*/
     height: 12px;
     line-height: 12px;
     vertical-align: middle;
-    padding: 0 0 0 2px;
+    padding: 0 0 0 2px !important;
 }
 
 .ui-dialog-titlebar {
     color: #ffffff;
-    padding: 2px !important;
+    padding: 2px 0 2px 2px !important;
     line-height: 16px;
     cursor: pointer;
     font-weight: bold;
@@ -111,7 +111,7 @@ div#taskbar {
     bottom: 0;
     overflow: hidden;
     width: 100%;
-    height: 30px;
+    height: 28px;
     border-top: #fffff9 solid 2px;
     z-index: 99999;
     padding: 1px !important;
@@ -124,7 +124,7 @@ div#lwd-taskbar-button-container > button, div#taskbar>button {
     background-color: #d4d0c8;
     height: 26px;
     min-width: 70px;
-    padding: 1px 5px 2px 5px;
+    padding: 1px 5px 2px 3px;
     margin: 2px 2px 0 2px !important;
     border-top: #f8f7f6 solid 2px;
     border-left: #f8f7f6 solid 2px;
@@ -135,13 +135,25 @@ div#lwd-taskbar-button-container > button, div#taskbar>button {
 
 div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-container > button.lwd-taskbar-button-focus, div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus, div#lwd-taskbar-button-container > button.ui-state-hover  {
     margin: 2px 2px 0 2px !important;
-    padding: 2px 5px 2px 5px !important;
+    padding: 2px 5px 2px 3px !important;
     background-color: #e9e7e5 !important;
     border-top: #3d3e40 solid 2px !important;
     border-left: #3d3e40 solid 2px !important;
     border-bottom: #f8f7f6 solid 2px !important;
     border-right: #f8f7f6 solid 2px !important;
     outline: none;
+}
+
+.lwd-taskbar-icon {
+    height: 19px;
+}
+
+.lwd-taskbar-button-title {
+    margin: 2px 0 0 3px;
+    font-weight: bold;
+    font-size: 12px !important;
+    line-height: 19px;
+    height: 17px;
 }
 
 .lwd-window-titlebar-button {
@@ -162,6 +174,15 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 
 .ui-dialog-content {
     padding: 2px !important;
+}
+
+.lwd-window-icon {
+    margin: -1px 1px 0 0 !important;
+}
+
+.lwd-window-buttonbar {
+    position: absolute;
+    right: -2px !important;
 }
 
 
