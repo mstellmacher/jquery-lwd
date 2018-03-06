@@ -112,6 +112,10 @@ $(document).ready(function () {
                     objThis.minimize();
                 }
             });
+
+            this.uiDialogTitlebar.find($('.lwd-window-titlebar-button')).on('click', function(){
+                $(this).addClass('ui-state-hover');
+            });
             /* END - Events */
         },
 
