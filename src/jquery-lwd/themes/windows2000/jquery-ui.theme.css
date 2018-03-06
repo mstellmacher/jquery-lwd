@@ -114,6 +114,7 @@ div#taskbar {
     height: 30px;
     border-top: #fffff9 solid 2px;
     z-index: 99999;
+    padding: 1px !important;
 }
 
 div#lwd-taskbar-button-container > button, div#taskbar>button {
@@ -149,6 +150,10 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
     height: 14px !important;
     width: 16px !important;
     border: 0 !important;
+}
+
+.lwd-window-titlebar-maximize {
+    margin-left: 0 !important;
 }
 
 .lwd-window-buttonbar {
