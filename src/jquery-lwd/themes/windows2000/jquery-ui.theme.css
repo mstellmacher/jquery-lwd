@@ -168,10 +168,6 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
     margin-left: 0 !important;
 }
 
-.lwd-window-buttonbar {
-    margin-top: -1px;
-}
-
 .ui-dialog-content {
     padding: 2px !important;
 }
@@ -181,6 +177,7 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-window-buttonbar {
+    margin-top: 0;
     position: absolute;
     right: -2px !important;
 }
