@@ -11,11 +11,11 @@ $(document).ready(function () {
 
             this.uiDialogTitlebar.html('');
 
-            var $objTitlebarMiddle = $('<td class="titlebar-middle">'+this.options.title+'</td>');
             var $objTR = $('<tr></tr>');
+            var $objTitlebarMiddle = $('<td class="titlebar-middle">'+this.options.title+'</td>');
             var $objTitlebar =  $('<table class="titlebar"></table>');
-
             var $objTitlebarRight = $('<td class="titlebar-right"></td>');
+
             // Mminimize-button
             if(this.options.minimizable === true){
                 var $objMinimizableButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-minimize" type="button" role="button" title="Minimize"><span class="ui-button-icon-primary ui-icon ui-icon-minimizethick"></span><span class="ui-button-text">Minimize</span></button>');
@@ -470,7 +470,9 @@ $(document).ready(function () {
             }
 
             $objTaskbar.addClass('ui-widget-header') && $objTaskbar.addClass('ui-corner-all');
+
             $objTaskbar.append($('<div id="lwd-taskbar-button-container"></div>'));
+            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
 
             $objTaskbar.on('click','button.lwd-taskbar-windowbutton', function(){
                 //console.log('click');

@@ -144,7 +144,7 @@ div#taskbar {
     padding: 1px !important;
 }
 
-div#taskbar>button {
+div#taskbar button {
     display: block;
     float: left;
     cursor: pointer;
@@ -162,6 +162,15 @@ div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus {
     margin: 2px 2px 0 2px !important;
     background-color: #ABC3CC !important;
     outline: none;
+}
+
+div#lwd-taskbar-button-container {
+    display: inline-block;
+    overflow: hidden;
+}
+
+div#lwd-taskbar-information_container {
+    display: inline-block;
 }
 
 div#lwd-taskbar-button-container > button {
@@ -258,4 +267,49 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 .ui-icon {
     width: 18px !important;
     height: 18px !important;
+}
+
+div#lwd-taskbar-information_container>div{
+    display: inline-block !important;
+    color: #eff1f1;
+    vertical-align: middle;
+}
+
+table.taskbar{
+    padding: 0 !important;
+}
+
+td.taskbar-left {
+    text-align: left;
+}
+
+td.taskbar-middle {
+    text-align: left;
+}
+
+td.taskbar-right {
+    text-align: right;
+}
+
+#lwd-taskbar-information_container{
+    display: block;
+    float:right;
+    margin: 0 8px 0 0;
+}
+
+#lwd-taskbar-clock {
+    float: right;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 24px;
+    line-height: 20px;
+    padding: 2px 0 0 0;
+}
+
+
+#lwd-taskbar-info {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    margin: 2px 8px 0 0;
 }

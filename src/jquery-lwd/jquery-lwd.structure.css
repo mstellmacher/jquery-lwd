@@ -60,7 +60,7 @@ td.titlebar-right {
     background-position: -48px -80px;
 }
 
-#taskbar {
+div#taskbar {
     min-height: 30px;
     border-radius: 0;
     position: absolute;
@@ -85,4 +85,28 @@ td.titlebar-right {
 
 .lwd-taskbar-icon {
     float: left !important;
+}
+
+table#taskbar{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+td.taskbar-left {
+    padding: 0;
+    margin: 0;
+}
+
+td.taskbar-middle {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+td.taskbar-right {
+    padding: 0;
+    margin: 0;
 }
