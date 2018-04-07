@@ -142,9 +142,24 @@ $(document).ready(function () {
                             if(intNewPositionTop === parseInt($(this).position().top) && intNewPositionLeft === intThisPositionLeft){
                                 intNewPositionTop = intThisPositionTop+intTitlebarHeight;
                                 intNewPositionLeft = intThisPositionLeft+intTitlebarHeight;
+
+                                var intNewBottom = intNewPositionTop + parseInt(objThis.uiDialog.outerHeight());
+                                var intNewRight = intNewPositionLeft + parseInt(objThis.uiDialog.outerWidth());
+                                var intWindowHeight = parseInt($(window).height()) - parseInt($('div#taskbar').height());
+                                var intWindowWidth = parseInt($(window).width());
+
+                                if(intNewBottom > intWindowHeight){
+                                    intNewPositionTop = 0;
+                                }
+
+                                if(intNewRight > intWindowWidth){
+                                    intNewPositionLeft = 0;
+                                }
                             }
                         }
                     });
+
+
 
                     if(intNewPositionLeft  !== null && intNewPositionTop !== null){
                         objThis.uiDialog.position({

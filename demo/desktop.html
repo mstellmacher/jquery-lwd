@@ -5,7 +5,7 @@
         <title>Test</title>
 
         <link href="../lib/jquery-ui/jquery-ui.structure.min.css" rel="stylesheet" type="text/css" />
-        <link id="themecss" href="../src/jquery-lwd/themes/jquery-ui-mintchoc/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
+        <link id="themecss" href="../src/jquery-lwd/themes/material/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
         <link href="../src/jquery-lwd/jquery-lwd.structure.css" rel="stylesheet" type="text/css" />
 
         <script type="text/javascript" src="../lib/jquery-ui/jquery.min.js"></script>
@@ -21,11 +21,8 @@
         <label for="theme">Theme:</label>
         <select id="theme">
             <option value="">--- please choose</option>
-            <option value="../src/jquery-lwd/themes/jquery-ui-base/jquery-ui.theme.css">Base</option>
-            <option value="../src/jquery-lwd/themes/jquery-ui-mintchoc/jquery-ui.theme.css">Mintchoc</option>
-            <option value="../src/jquery-lwd/themes/jquery-ui-redmond/jquery-ui.theme.css">Redmond</option>
-            <option value="../src/jquery-lwd/themes/jquery-ui-cupertino/jquery-ui.theme.css">Cupertino</option>
             <option value="../src/jquery-lwd/themes/windows2000/jquery-ui.theme.css">Windows 2000</option>
+            <option value="../src/jquery-lwd/themes/material/jquery-ui.theme.css">Material</option>
         </select>
     </body>
 
@@ -38,17 +35,17 @@
                 $($objWindow).appendTo('body');
                 $objWindow.window({
                     title: 'Window '+intCounter,
-                    width: 800,
-                    height: 600,
+                    width: 480,
+                    height: 320,
                     position: {
                         my: 'left+'+200+', top+'+200,
                         at: 'left top',
                         of: window
                     },
                     maximizable: true,
-                    minimizable: true,
+                    minimizable: true//,
 
-                    icon: '../src/jquery-lwd/themes/windows2000/images/default.png'
+                    //icon: '../src/jquery-lwd/themes/windows2000/images/default.png'
                 });
 
                 intCounter++;
