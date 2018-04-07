@@ -9,20 +9,50 @@ $(document).ready(function () {
 
             intWindowCounter++;
 
-            /* START - Titlebar-Buttons */
-            var $objWindowButtonBar = $('<div class="lwd-window-buttonbar"></div>');
+            this.uiDialogTitlebar.html('');
 
+            var $objTitlebarMiddle = $('<td class="titlebar-middle">'+this.options.title+'</td>');
+            var $objTR = $('<tr></tr>');
+            var $objTitlebar =  $('<table class="titlebar"></table>');
+
+            var $objTitlebarRight = $('<td class="titlebar-right"></td>');
             // Mminimize-button
             if(this.options.minimizable === true){
-                var $objMinimizableButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-minimize" type="button" role="button" title="Minimize"><span class="ui-button-icon-primary ui-icon ui-icon-minimizethick"></span><span class="ui-button-text">Close</span></button>');
-                $objWindowButtonBar.append($objMinimizableButton);
+                var $objMinimizableButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-minimize" type="button" role="button" title="Minimize"><span class="ui-button-icon-primary ui-icon ui-icon-minimizethick"></span><span class="ui-button-text">Minimize</span></button>');
+                $objTitlebarRight.append($objMinimizableButton);
             }
 
             // Maximize-Button
             if(this.options.maximizable === true){
-                var $objMaximizeButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-maximize" type="button" role="button" title="Maximize"><span class="ui-button-icon-primary ui-icon ui-icon-maximizethick"></span><span class="ui-button-text">Close</span></button>');
-                $objWindowButtonBar.append($objMaximizeButton);
+                var $objMaximizeButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-maximize" type="button" role="button" title="Maximize"><span class="ui-button-icon-primary ui-icon ui-icon-maximizethick"></span><span class="ui-button-text">Maximize</span></button>');
+                $objTitlebarRight.append($objMaximizeButton);
             }
+
+            // Close-Button
+            if(this.options.maximizable === true){
+                var $objCloseButton = $('<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only lwd-window-titlebar-button lwd-window-titlebar-close" type="button" role="button" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button>');
+                $objTitlebarRight.append($objCloseButton);
+            }
+
+            var $objTitlebarLeft = $('<td class="titlebar-left"></td>');
+
+            if(this.options.icon !== '' && this.options.icon !== undefined){
+                $objTitlebarLeft.append($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
+            }
+
+            $objTR.append($objTitlebarLeft);
+            $objTR.append($objTitlebarMiddle);
+            $objTR.append($objTitlebarRight);
+            $objTitlebar.append($objTR);
+
+            this.uiDialogTitlebar.append($objTitlebar);
+
+            /* START - Titlebar-Buttons */
+            /*var $objWindowButtonBar = $('<div class="lwd-window-buttonbar"></div>');
+
+
+
+
 
             // Close-Button
             if(this.options.closable === false) {
@@ -36,11 +66,12 @@ $(document).ready(function () {
             }
 
             this.uiDialogTitlebar.append($objWindowButtonBar);
+            */
             /* END - Titlebar-Buttons */
 
             /* START - Add Icon to titlebar and tasklbar */
             if(this.options.icon !== '' && this.options.icon !== undefined){
-                this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
+                //this.uiDialogTitlebar.prepend($('<img src="'+this.options.icon+'" class="lwd-window-icon" />'));
             }
             /* END - Add Icon to titlebar and tasklbar */
 
@@ -115,6 +146,10 @@ $(document).ready(function () {
 
             this.uiDialogTitlebar.find($('.lwd-window-titlebar-button')).on('click', function(){
                 $(this).addClass('ui-state-hover');
+            });
+
+            this.uiDialogTitlebar.find('.lwd-window-titlebar-close').on('click', function () {
+                objThis.close();
             });
             /* END - Events */
         },
