@@ -86,8 +86,3 @@ td.titlebar-right {
 .lwd-taskbar-icon {
     float: left !important;
 }
-
-.lwd-taskbar-button-title {
-    float: left;
-    margin-left: 5px;
-}

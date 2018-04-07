@@ -134,33 +134,58 @@ td.titlebar-right{
 
 
 div#taskbar {
-    background: #d4d0c8;
+    background: #4c565e;
     position: absolute;
     bottom: 0;
     overflow: hidden;
     width: 100%;
     height: 28px;
-    border-top: #fffff9 solid 2px;
     z-index: 99999;
     padding: 1px !important;
 }
 
-div#lwd-taskbar-button-container > button, div#taskbar>button {
+div#taskbar>button {
     display: block;
     float: left;
     cursor: pointer;
-    background-color: #d4d0c8;
+    background-color: #eff1f1;
+    color: #4c565e;
+    border: 1px solid #ABC3CC;
+    border-radius: 2px;
     height: 26px;
     min-width: 70px;
-    padding: 1px 5px 2px 3px;
     margin: 2px 2px 0 2px !important;
     font-weight: normal !important;
 }
 
-div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-container > button.lwd-taskbar-button-focus, div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus, div#lwd-taskbar-button-container > button.ui-state-hover  {
+div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus {
     margin: 2px 2px 0 2px !important;
-    padding: 2px 5px 2px 3px !important;
-    background-color: #e9e7e5 !important;
+    background-color: #ABC3CC !important;
+    outline: none;
+}
+
+div#lwd-taskbar-button-container > button {
+    display: block;
+    float: left;
+    cursor: pointer;
+    background-color: #4c565e;
+    color: #ABC3CC;
+    border-top: 2px solid #ABC3CC;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 26px;
+    min-width: 80px !important;
+    margin: 2px 2px 0 2px !important;
+    padding: 0 4px 0 4px !important;
+    font-weight: bold !important;
+    text-align: center;
+}
+
+div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-container > button.lwd-taskbar-button-focus, div#lwd-taskbar-button-container > button.ui-state-hover  {
+    margin: 2px 2px 0 2px !important;
+    color: #eff1f1;
+    border-top: 2px solid #eff1f1;
     outline: none;
 }
 
@@ -175,7 +200,6 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-taskbar-button-title {
-    margin: 2px 0 0 3px !important;
     font-weight: bold;
     font-size: 12px !important;
     line-height: 19px;
