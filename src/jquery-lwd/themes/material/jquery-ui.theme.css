@@ -178,7 +178,6 @@ div#lwd-taskbar-button-container > button {
     min-width: 80px !important;
     margin: 2px 2px 0 2px !important;
     padding: 0 4px 0 4px !important;
-    font-weight: bold !important;
     text-align: center;
 }
 
@@ -187,6 +186,7 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
     color: #eff1f1;
     border-top: 2px solid #eff1f1;
     outline: none;
+    font-weight: bold !important;
 }
 
 .lwd-taskbar-icon {
@@ -200,7 +200,6 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-taskbar-button-title {
-    font-weight: bold;
     font-size: 12px !important;
     line-height: 19px;
     height: 17px;
