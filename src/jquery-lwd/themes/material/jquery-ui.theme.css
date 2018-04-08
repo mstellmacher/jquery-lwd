@@ -337,11 +337,13 @@ td.taskbar-right {
 }
 
 img#lwd-taskbar-nav-up {
+    cursor: pointer;
     display: block;
     margin: 2px 2px 2px 2px;
 }
 
 img#lwd-taskbar-nav-down {
+    cursor: pointer;
     display: block;
     margin: -11px 2px 2px 2px;
 }

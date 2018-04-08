@@ -103,8 +103,8 @@ $(document).ready(function () {
                 });
 
                 if(intElementWidth > intButtoncont){
-                    $('#taskbar-up').show();
-                    $('#taskbar-down').show();
+                    $('#lwd-taskbar-nav-up').show();
+                    $('#lwd-taskbar-nav-down').show();
 
                     //$('#lwd-taskbar-button-navigation').show();
                 }
@@ -492,7 +492,7 @@ $(document).ready(function () {
             $objTaskbar.addClass('ui-widget-header') && $objTaskbar.addClass('ui-corner-all');
 
             $objTaskbar.append($('<div id="lwd-taskbar-button-container"></div>'));
-            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><div id="lwd-taskbar-button-navigation"><a style="display: none;" id="taskbar-up" href="#"><img id="lwd-taskbar-nav-up" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_up.png" /></a><br /><a style="display:none;" id="taskbar-down" href="#"><img id="lwd-taskbar-nav-down" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_down.png" /></a></div><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
+            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><div id="lwd-taskbar-button-navigation"><img style="display: none;" id="lwd-taskbar-nav-up" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_up.png" /><br /><img style="display: none;"  id="lwd-taskbar-nav-down" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_down.png" /></div><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
 
             $objTaskbar.on('click','button.lwd-taskbar-windowbutton', function(){
                 //console.log('click');
@@ -509,7 +509,7 @@ $(document).ready(function () {
 
             var intPage = 0;
 
-            $objTaskbar.on('click','#taskbar-down', function () {
+            $objTaskbar.on('click','#lwd-taskbar-nav-down', function () {
                 intPage++;
                 var intHeight = parseInt($('#lwd-taskbar-button-container').height());
                 var intTargetHeight = intPage*intHeight;
@@ -523,7 +523,7 @@ $(document).ready(function () {
                 $('#lwd-taskbar-button-container').scrollTop(intTargetHeight);
             });
 
-            $objTaskbar.on('click','#taskbar-up', function () {
+            $objTaskbar.on('click','#lwd-taskbar-nav-up', function () {
                 intPage--;
                 intPage = (intPage >= 0)? intPage: 0;
 
