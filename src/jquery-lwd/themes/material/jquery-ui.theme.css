@@ -11,7 +11,7 @@
 
 html, body {
     background: #a52a3e;
-    background: url('images/bg1.jpg') no-repeat center center fixed;
+    background: url('images/bg3.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -108,6 +108,7 @@ td.titlebar-middle {
     vertical-align: middle;
     font-weight: bold;
     padding: 0 0 2px 0;
+    overflow: hidden;
 }
 
 div.lwd-window-focus td.titlebar-middle {
