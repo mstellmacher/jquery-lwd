@@ -167,6 +167,7 @@ div#taskbar>button:active, div#taskbar>button.lwd-taskbar-button-focus {
 div#lwd-taskbar-button-container {
     display: inline-block;
     overflow: hidden;
+    max-height: 30px;
 }
 
 div#lwd-taskbar-information_container {

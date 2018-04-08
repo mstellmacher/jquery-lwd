@@ -506,11 +506,44 @@ $(document).ready(function () {
 
                 $objWindow.focus();
             });
+
+            var intPage = 0;
+
+            $objTaskbar.on('click','#taskbar-down', function () {
+                intPage++;
+                var intHeight = parseInt($('#lwd-taskbar-button-container').height());
+                var intTargetHeight = intPage*intHeight;
+                var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
+                console.log('intTargetHeight: '+intTargetHeight+', intScrollHeight: '+intScrollHeight);
+
+                if(intTargetHeight >= intScrollHeight){
+                    intPage--;
+                }
+
+                intTargetHeight = intPage*intHeight;
+
+                console.log('page: '+intPage);
+
+                $('#lwd-taskbar-button-container').scrollTop(intTargetHeight);
+            });
+
+            $objTaskbar.on('click','#taskbar-up', function () {
+                intPage--;
+                intPage = (intPage >= 0)? intPage: 0;
+
+                if(intPage <= 0){
+                    intPage = 0;
+                }
+
+                var intHeight = $('#lwd-taskbar-button-container').height();
+                var intTargetHeight = intPage*intHeight;
+                console.log('page: '+intPage);
+
+                $('#lwd-taskbar-button-container').scrollTop(intTargetHeight);
+            });
         }
     });
     /* END - Taskbar-Widget */
-
-    var intervalID = window.setInterval(clockRefresh, 1000);
 
     function clockRefresh() {
         var objDate = new Date();
@@ -528,4 +561,6 @@ $(document).ready(function () {
 
         $('#lwd-taskbar-clock').html(mixHour+':'+mixMin);
     }
+
+    var intervalID = window.setInterval(clockRefresh, 1000);
 });
