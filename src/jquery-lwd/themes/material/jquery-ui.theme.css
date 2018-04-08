@@ -183,7 +183,7 @@ div#lwd-taskbar-button-container > button {
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
-    height: 26px;
+    height: 28px;
     margin: 2px 2px 0 2px !important;
     padding: 0 4px 0 4px !important;
     font-weight: bold !important;
@@ -323,4 +323,24 @@ td.taskbar-right {
 .taskbar-buttonbar-switch {
     float: right;
     display: block !important;
+}
+
+#lwd-taskbar-button-navigation{
+    display: block;
+    border-left: 1px solid #ABC3CC;
+    border-right: 1px solid #ABC3CC;
+    float: left;
+    width: 15px;
+    height: 25px;
+    margin: 3px 15px 0 0;
+}
+
+img#lwd-taskbar-nav-up {
+    display: block;
+    margin: 2px 2px 2px 2px;
+}
+
+img#lwd-taskbar-nav-down {
+    display: block;
+    margin: -11px 2px 2px 2px;
 }

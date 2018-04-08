@@ -103,7 +103,10 @@ $(document).ready(function () {
                 });
 
                 if(intElementWidth > intButtoncont){
-                    $('#lwd-taskbar-button-container').append($('<img class="taskbar-buttonbar-switch" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_left.png" />'));
+                    $('#taskbar-up').show();
+                    $('#taskbar-down').show();
+
+                    //$('#lwd-taskbar-button-navigation').show();
                 }
             }
             /* END - Add button to taskbar */
@@ -489,7 +492,7 @@ $(document).ready(function () {
             $objTaskbar.addClass('ui-widget-header') && $objTaskbar.addClass('ui-corner-all');
 
             $objTaskbar.append($('<div id="lwd-taskbar-button-container"></div>'));
-            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
+            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><div id="lwd-taskbar-button-navigation"><a style="display: none;" id="taskbar-up" href="#"><img id="lwd-taskbar-nav-up" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_up.png" /></a><br /><a style="display:none;" id="taskbar-down" href="#"><img id="lwd-taskbar-nav-down" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_down.png" /></a></div><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
 
             $objTaskbar.on('click','button.lwd-taskbar-windowbutton', function(){
                 //console.log('click');
@@ -511,6 +514,18 @@ $(document).ready(function () {
 
     function clockRefresh() {
         var objDate = new Date();
-        $('#lwd-taskbar-clock').html(objDate.getHours()+':'+objDate.getMinutes());
+
+        var mixHour = objDate.getHours();
+        var mixMin = objDate.getMinutes();
+
+        if(mixHour < 10){
+            mixHour = '0'+mixHour;
+        }
+
+        if(mixMin < 10){
+            mixMin = '0'+mixMin;
+        }
+
+        $('#lwd-taskbar-clock').html(mixHour+':'+mixMin);
     }
 });
