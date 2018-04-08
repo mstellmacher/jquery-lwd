@@ -35,6 +35,7 @@
 
             $('#addbutton').click(function () {
                 var $objWindow = $('<div class="window">Window '+intCounter+'</div>');
+                var intRandom = Math.floor((Math.random() * 12) + 1);
                 $($objWindow).appendTo('body');
                 $objWindow.window({
                     title: 'My awesome custom window '+intCounter,
@@ -46,9 +47,10 @@
                         of: window
                     },
                     maximizable: true,
-                    minimizable: true//,
+                    minimizable: true,
 
                     //icon: '../src/jquery-lwd/themes/windows2000/images/default.png'
+                    icon: '../src/jquery-lwd/themes/material/images/icons/'+intRandom+'.png'
                 });
 
                 intCounter++;

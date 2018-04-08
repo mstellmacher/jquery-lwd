@@ -200,7 +200,9 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-taskbar-icon {
-    height: 18px;
+    height: 16px;
+    width: 16px;
+    margin: 0 4px 0 0;
 }
 
 .lwd-window-buttonbar {
@@ -248,7 +250,7 @@ div#lwd-taskbar-button-container > button:active, div#lwd-taskbar-button-contain
 }
 
 .lwd-window-icon {
-    margin: -1px 1px 0 0 !important;
+    margin: -1px 1px 0 2px !important;
 }
 
 .lwd-window-buttonbar {
