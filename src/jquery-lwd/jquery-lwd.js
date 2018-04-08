@@ -88,6 +88,23 @@ $(document).ready(function () {
                 }
 
                 $objTaskbarButtonContaier.append($objTaskbarButton);
+
+                var intMaxWindowbuttonbarWidth = parseInt($objTaskbar.width());
+                var intTaskbarLEft = parseInt($('#lwd-taskbar-left').outerWidth());
+                var intButtoncont = parseInt($('#lwd-taskbar-button-container').outerWidth());
+                var intInfoCont = parseInt($('#lwd-taskbar-information_container').outerWidth());
+                var intSum = intMaxWindowbuttonbarWidth - intTaskbarLEft - intInfoCont;
+                $objTaskbarButtonContaier.width(intSum-20);
+
+                var intElementWidth = 0;
+
+                $objTaskbarButtonContaier.children().each(function () {
+                    intElementWidth += parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))+ parseInt($(this).css('margin-left'))+ parseInt($(this).css('margin-right'));
+                });
+
+                if(intElementWidth > intButtoncont){
+                    $('#lwd-taskbar-button-container').append($('<img class="taskbar-buttonbar-switch" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_left.png" />'));
+                }
             }
             /* END - Add button to taskbar */
 
