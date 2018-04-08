@@ -506,4 +506,11 @@ $(document).ready(function () {
         }
     });
     /* END - Taskbar-Widget */
+
+    var intervalID = window.setInterval(clockRefresh, 1000);
+
+    function clockRefresh() {
+        var objDate = new Date();
+        $('#lwd-taskbar-clock').html(objDate.getHours()+':'+objDate.getMinutes());
+    }
 });
