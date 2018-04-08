@@ -328,12 +328,12 @@ td.taskbar-right {
 
 #lwd-taskbar-button-navigation{
     display: block;
-    border-left: 1px solid #ABC3CC;
     border-right: 1px solid #ABC3CC;
     float: left;
     width: 15px;
     height: 25px;
     margin: 3px 15px 0 0;
+    padding: 0 5px 0 0;
 }
 
 img#lwd-taskbar-nav-up {
