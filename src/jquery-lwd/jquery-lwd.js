@@ -274,7 +274,14 @@ $(document).ready(function () {
                         var $objTaskbarButtonContainer = $('div#lwd-taskbar-button-container');
 
                         $objTaskbarButtonContainer.find('button').removeClass('ui-state-hover');
-                        $objTaskbarButtonContainer.find('button[data-ariadescribedby="' + this.uiDialog.attr('aria-describedby') + '"]').addClass('ui-state-hover');
+                        var $objTaskbarButton = $objTaskbarButtonContainer.find('button[data-ariadescribedby="' + this.uiDialog.attr('aria-describedby') + '"]');
+                        $objTaskbarButton.addClass('ui-state-hover');
+                        var intButtonOffset = parseInt($objTaskbarButton.offset().top);
+                        var intTaskbarHeight = parseInt($objTaskbar.height());
+                        var $objFIrstTaskbarButton = $objTaskbarButtonContainer.find('button').first();
+                        var intTaskbarOffsetTop = parseInt($objFIrstTaskbarButton.offset().top);
+                        var intHeightDiff = intButtonOffset - intTaskbarOffsetTop;
+                        $('#lwd-taskbar-button-container').scrollTop(intHeightDiff);
                     }
                 }
             }
