@@ -528,7 +528,7 @@ $(document).ready(function () {
                 var intHeight = parseInt($('#lwd-taskbar-button-container').height());
                 var intTargetHeight = intPage*intHeight;
                 var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
-                *
+
                 if(intTargetHeight >= intScrollHeight){
                     intPage--;
                 }
