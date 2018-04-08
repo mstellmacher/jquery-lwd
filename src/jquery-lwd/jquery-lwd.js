@@ -504,7 +504,7 @@ $(document).ready(function () {
                     $objWindow.restore();
                 }
 
-                $objWindow.focus();s
+                $objWindow.focus();
             });
 
             var intPage = 0;

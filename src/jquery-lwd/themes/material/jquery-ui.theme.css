@@ -318,7 +318,7 @@ td.taskbar-right {
 #lwd-taskbar-left{
     display: block;
     float: left;
-    padding-right: 8px;
+    padding-right: 5px;
 }
 
 .taskbar-buttonbar-switch {
@@ -344,4 +344,12 @@ img#lwd-taskbar-nav-up {
 img#lwd-taskbar-nav-down {
     display: block;
     margin: -11px 2px 2px 2px;
+}
+
+.taskbar-spacer {
+    display: inline-block;
+    height: 25px;
+    width: 1px;
+    border-right: 1px solid #ABC3CC;
+    margin: 3px 0 0 3px;
 }
