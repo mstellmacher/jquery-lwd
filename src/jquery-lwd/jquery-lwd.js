@@ -528,9 +528,7 @@ $(document).ready(function () {
                 var intHeight = parseInt($('#lwd-taskbar-button-container').height());
                 var intTargetHeight = intPage*intHeight;
                 var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
-
-                console.log('intHeight: '+intHeight+', intScrollHeight: '+intScrollHeight);
-
+                *
                 if(intTargetHeight >= intScrollHeight){
                     intPage--;
                 }
@@ -549,7 +547,6 @@ $(document).ready(function () {
                 intPage--;
                 var intHeight = parseInt($('#lwd-taskbar-button-container').height());
                 var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
-                console.log('intHeight: '+intHeight+', intScrollHeight: '+intScrollHeight);
 
                 intPage = (intPage >= 0)? intPage: 0;
                 var intTargetHeight = intPage*intHeight;
