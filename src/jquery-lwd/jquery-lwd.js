@@ -281,7 +281,10 @@ $(document).ready(function () {
                         var $objFIrstTaskbarButton = $objTaskbarButtonContainer.find('button').first();
                         var intTaskbarOffsetTop = parseInt($objFIrstTaskbarButton.offset().top);
                         var intHeightDiff = intButtonOffset - intTaskbarOffsetTop;
+                        var intPage = Math.floor(intHeightDiff/intTaskbarHeight);
                         $('#lwd-taskbar-button-container').scrollTop(intHeightDiff);
+                        $('#lwd-taskbar-nav-down').attr('data-page',intPage);
+                        $('#lwd-taskbar-nav-up').attr('data-page',intPage);
                     }
                 }
             }
@@ -517,29 +520,41 @@ $(document).ready(function () {
             var intPage = 0;
 
             $objTaskbar.on('click','#lwd-taskbar-nav-down', function () {
+                if(!isNaN($(this).attr('data-page'))){
+                    intPage = parseInt($(this).attr('data-page'));
+                }
+
                 intPage++;
                 var intHeight = parseInt($('#lwd-taskbar-button-container').height());
                 var intTargetHeight = intPage*intHeight;
                 var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
+
+                console.log('intHeight: '+intHeight+', intScrollHeight: '+intScrollHeight);
 
                 if(intTargetHeight >= intScrollHeight){
                     intPage--;
                 }
 
                 intTargetHeight = intPage*intHeight;
+                $('#lwd-taskbar-nav-down').attr('data-page',intPage);
+                $('#lwd-taskbar-nav-up').attr('data-page',intPage);
                 $('#lwd-taskbar-button-container').scrollTop(intTargetHeight);
             });
 
             $objTaskbar.on('click','#lwd-taskbar-nav-up', function () {
-                intPage--;
-                intPage = (intPage >= 0)? intPage: 0;
-
-                if(intPage <= 0){
-                    intPage = 0;
+                if(!isNaN($(this).attr('data-page'))){
+                    intPage = parseInt($(this).attr('data-page'));
                 }
 
-                var intHeight = $('#lwd-taskbar-button-container').height();
+                intPage--;
+                var intHeight = parseInt($('#lwd-taskbar-button-container').height());
+                var intScrollHeight = parseInt($('#lwd-taskbar-button-container')[0].scrollHeight);
+                console.log('intHeight: '+intHeight+', intScrollHeight: '+intScrollHeight);
+
+                intPage = (intPage >= 0)? intPage: 0;
                 var intTargetHeight = intPage*intHeight;
+                $('#lwd-taskbar-nav-down').attr('data-page',intPage);
+                $('#lwd-taskbar-nav-up').attr('data-page',intPage);
                 $('#lwd-taskbar-button-container').scrollTop(intTargetHeight);
             });
         }
