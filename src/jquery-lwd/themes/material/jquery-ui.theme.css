@@ -186,6 +186,7 @@ div#lwd-taskbar-button-container > button {
     height: 26px;
     margin: 2px 2px 0 2px !important;
     padding: 0 4px 0 4px !important;
+    font-weight: bold !important;
     text-align: center;
 }
 
@@ -279,6 +280,7 @@ table.taskbar{
 
 td.taskbar-left {
     text-align: left;
+    margin-right: 10px;
 }
 
 td.taskbar-middle {
@@ -315,6 +317,7 @@ td.taskbar-right {
 #lwd-taskbar-left{
     display: block;
     float: left;
+    padding-right: 8px;
 }
 
 .taskbar-buttonbar-switch {
