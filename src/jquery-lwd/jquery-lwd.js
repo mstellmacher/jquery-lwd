@@ -103,10 +103,9 @@ $(document).ready(function () {
                 });
 
                 if(intElementWidth > intButtoncont){
-                    $('#lwd-taskbar-nav-up').show();
-                    $('#lwd-taskbar-nav-down').show();
-
-                    //$('#lwd-taskbar-button-navigation').show();
+                    $('#lwd-taskbar-button-navigation').show();
+                }else{
+                    $('#lwd-taskbar-button-navigation').hide();
                 }
             }
             /* END - Add button to taskbar */
@@ -240,6 +239,26 @@ $(document).ready(function () {
                 $objTaskbar.find('button[data-ariadescribedby="'+this.uiDialog.attr('aria-describedby')+'"]').remove();
             }
 
+            var $objTaskbarButtonContaier = $('div#lwd-taskbar-button-container');
+            var intMaxWindowbuttonbarWidth = parseInt($objTaskbar.width());
+            var intTaskbarLEft = parseInt($('#lwd-taskbar-left').outerWidth());
+            var intButtoncont = parseInt($('#lwd-taskbar-button-container').outerWidth());
+            var intInfoCont = parseInt($('#lwd-taskbar-information_container').outerWidth());
+            var intSum = intMaxWindowbuttonbarWidth - intTaskbarLEft - intInfoCont;
+            $objTaskbarButtonContaier.width(intSum-20);
+
+            var intElementWidth = 0;
+
+            $objTaskbarButtonContaier.children().each(function () {
+                intElementWidth += parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))+ parseInt($(this).css('margin-left'))+ parseInt($(this).css('margin-right'));
+            });
+
+            if(intElementWidth > intButtoncont){
+                $('#lwd-taskbar-button-navigation').show();
+            }else{
+                $('#lwd-taskbar-button-navigation').hide();
+            }
+
             this.uiDialog.off('click');
             this.focusNextOpenWindow();
             this._super();
@@ -280,7 +299,7 @@ $(document).ready(function () {
                         var intTaskbarHeight = parseInt($objTaskbar.height());
                         var $objFIrstTaskbarButton = $objTaskbarButtonContainer.find('button').first();
                         var intTaskbarOffsetTop = parseInt($objFIrstTaskbarButton.offset().top);
-                        var intHeightDiff = intButtonOffset - intTaskbarOffsetTop;
+                        var intHeightDiff = (intButtonOffset - intTaskbarOffsetTop);
                         var intPage = Math.floor(intHeightDiff/intTaskbarHeight);
                         $('#lwd-taskbar-button-container').scrollTop(intHeightDiff);
                         $('#lwd-taskbar-nav-down').attr('data-page',intPage);
@@ -501,8 +520,10 @@ $(document).ready(function () {
 
             $objTaskbar.addClass('ui-widget-header') && $objTaskbar.addClass('ui-corner-all');
 
+            $objTaskbar.append($('<div id="lwd-taskbar-button-navigation"><div id="lwd-taskbar-nav-up" >&nbsp;</div><div id="lwd-taskbar-nav-down" >&nbsp;</div></div>'));
+
             $objTaskbar.append($('<div id="lwd-taskbar-button-container"></div>'));
-            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><div id="lwd-taskbar-button-navigation"><img style="display: none;" id="lwd-taskbar-nav-up" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_up.png" /><br /><img style="display: none;"  id="lwd-taskbar-nav-down" src="/jquery-lwd/src/jquery-lwd/themes/material/images/arrow_down.png" /></div><img src="/jquery-lwd/src/jquery-lwd/themes/material/images/info_inactive.png" id="lwd-taskbar-info" /><div id="lwd-taskbar-clock">00:00</div></div>'));
+            $objTaskbar.append($('<div id="lwd-taskbar-information_container"><div id="lwd-taskbar-clock">00:00</div></div>'));
 
             $objTaskbar.on('click','button.lwd-taskbar-windowbutton', function(){
                 //console.log('click');

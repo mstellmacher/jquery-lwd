@@ -17,7 +17,6 @@ body, html {
 
 table.titlebar{
     width: 100%;
-    height: 100%;
     border-collapse: collapse;
 }
 
@@ -27,7 +26,6 @@ td.titlebar-left {
 
 td.titlebar-middle {
     padding: 0;
-    text-align: center;
 }
 
 td.titlebar-right {
